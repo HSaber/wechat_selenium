@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuitePost" verbose="2">
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <test name="TestPost">
+        <classes>
+        	 <class name="com.gy.testcase.WaterMark"/>			
+        	<class name="com.gy.testcase.ImportPost"/>	
+        	<!-- <class name="com.gy.testcase.PostItemsLimit"/>	 -->	
+        	<class name="com.gy.testcase.CreateReplysPost"/>
+        	<class name="com.gy.testcase.CreateSinglePost"/>			
+        	<class name="com.gy.testcase.SendPreview"/>	
+        	<class name="com.gy.testcase.Send48Post"/>		
+        	<class name="com.gy.testcase.CreateReplymPost"/>
+        	<class name="com.gy.testcase.Verify48Post"/> 
+        	 <!-- <class name="com.hu.testcase.PollCreateTest"/> -->
+        	<class name="com.gy.testcase.CreateMultiPost"/>
+        	<class name="com.gy.testcase.AddMultiPostSummary"/>
+        	<class name="com.gy.testcase.SendPreviewPost"/>  
+        	<class name="com.gy.testcase.SendTagPreviewPost"/> 
+        	<class name="com.gy.testcase.SendTagPreviewVerify"/>
+        	 <class name="com.gy.testcase.SendPreviewText"/> 
+        	<!--  <class name="com.gy.testcase.SendGroupPost"/>
+        	<class name="com.gy.testcase.SchedulePost"/> -->
+        	<class name="com.gy.testcase.Schedule48Text"/> 
+        	<class name="com.gy.testcase.SendPreviewImage"/>
+        	<class name="com.gy.testcase.Send48SegmentationImage"/>     	
+        </classes>
+    </test>
+</suite>

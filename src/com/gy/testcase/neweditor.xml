@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteNewedior" verbose="2" parallel="tests" thread-count="1">
+    
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <test name="TestNeweditor">
+        <classes>
+        	<class name="com.gy.testcase.WaterMark"/>
+        	<class name="com.gy.testcase.PollCreate"/>			
+        	<class name="com.gy.testcase.NewEditorSinglePost"/>			
+        	<class name="com.gy.testcase.SendPreview"/>
+        	<class name="com.gy.testcase.Send48Post"/>	
+        	<class name="com.gy.testcase.NewEditorMultiReplyPost"/>
+        	<class name="com.gy.testcase.Verify48Post"/>
+        	<class name="com.gy.testcase.Schedule48SegmentationReplyPost"/>
+        	<class name="com.gy.testcase.NewEditorMultiPost"/>
+        	<class name="com.gy.testcase.AddMultiPostSummary"/>
+        	<class name="com.gy.testcase.SendPreviewPost"/>
+        	<class name="com.gy.testcase.SendTagPreviewPost"/>
+        	<class name="com.gy.testcase.SendTagPreviewVerify"/>
+        	
+        </classes>
+    </test>
+   	
+   <test name="TestNeweditorNotDepends">
+        <classes>
+        			
+        	<class name="com.gy.testcase.ImportPost"/>
+        	<class name="com.gy.testcase.PostItemsLimit"/>
+        	<class name="com.gy.testcase.NewEditorSingleReplyPost"/>
+        	<class name="com.gy.testcase.SendPreviewText"/>
+        	 <!-- <class name="com.gy.testcase.SendGroupPost"/>
+        	<class name="com.gy.testcase.SchedulePost"/> -->
+        	<class name="com.gy.testcase.Schedule48Text"/>
+        	<class name="com.gy.testcase.SendPreviewImage"/>
+        	<class name="com.gy.testcase.Send48SegmentationImage"/>     		
+        </classes>
+    </test> 
+</suite>

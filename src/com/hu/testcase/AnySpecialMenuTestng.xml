@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TriggerSuite" parallel="tests" thread-count="4">
+
+	<listeners>
+		<listener class-name="com.hu.testcase.RetryListener" />
+		<listener class-name="com.hu.testcase.TestListener" />
+	</listeners>
+
+	<test name="AnyMenuMultiCon"><!-- 0 AB+Message the same condition -->
+		<parameter name="TriggerTitle" value="AnyMenuCon" />
+		<parameter name="TriggerNum" value="3" />
+		<parameter name="openIdNum" value="0" />
+		<parameter name="openIdMax" value="0" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerAnyMenuMultiConditionalDelay" />
+			<class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+	<test name="AnyMenuTriggerOnce">
+		<parameter name="TriggerTitle" value="AnyMenuOnce" />
+		<parameter name="TriggerNum" value="4" />
+		<parameter name="openIdNum" value="2" />
+		<parameter name="openIdMax" value="2" />
+
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerAnyMenuMultiImmediately" />
+			<class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+			<class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+
+	<test name="SpecificMenuTriggerCon"><!-- 1 Action+Date -->
+		<parameter name="TriggerTitle" value="SpeMenuCon" />
+		<parameter name="TriggerNum" value="8" />
+		<parameter name="openIdNum" value="1" />
+		<parameter name="openIdMax" value="1" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerSpecificMenuConditionalDelay" />
+			<class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+	<test name="SpecificMenuTriggerOnce"><!-- 0,1,2,3 -->
+		<parameter name="TriggerTitle" value="SpeMenuOnce" />
+		<parameter name="TriggerNum" value="9" />
+		<parameter name="openIdNum" value="3" />
+		<parameter name="openIdMax" value="3" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerSpecificMenuOnceImmediately" />
+			<class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+			<class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suiteAll" verbose="2" parallel="tests" thread-count="3">
+   <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+   
+
+    <!--                                                   测试旧版post相关用例组                                                                                                               -->
+	 <!-- <test name="testPost">
+		<classes>
+				
+        	<class name="com.gy.testcase.PostItemsLimit"/>	
+        	<class name="com.gy.testcase.WaterMark"/>
+        	<class name="com.gy.testcase.CreateReplysPost"/>
+        	<class name="com.gy.testcase.CreateSinglePost"/>			
+        	<class name="com.gy.testcase.SendPreview"/>	
+        	<class name="com.gy.testcase.Send48Post"/>		
+        	<class name="com.gy.testcase.CreateReplymPost"/>
+        	<class name="com.gy.testcase.Verify48Post"/> 
+         <class name="com.hu.testcase.PollCreateTest"/> 
+        	<class name="com.gy.testcase.CreateMultiPost"/>
+        	<class name="com.gy.testcase.AddMultiPostSummary"/>
+        	<class name="com.gy.testcase.SendPreviewPost"/> 
+        	<class name="com.gy.testcase.SendTagPreviewPost"/> 
+        	<class name="com.gy.testcase.SendTagPreviewVerify"/>
+        	 
+         <class name="com.gy.testcase.SendGroupPost"/>
+        	<class name="com.gy.testcase.SchedulePost"/> 
+        	<class name="com.gy.testcase.Schedule48Text"/> 
+        	<class name="com.gy.testcase.Send48SegmentationImage"/>  
+		</classes>
+	</test>   -->
+	
+	<!--                                                  测试跟follow相关的用例组，包括所有trigger                           -->
+	  <test name="testTrigger">
+	    <classes>
+	        <class name="com.gy.testcase.CloseOldTrigger"/>
+	        
+	       
+    	   <class name="com.gy.testcase.SegmentationTag"/>  
+    	  	<class name="com.gy.testcase.AnyFollowTrigger"/>
+    	    <class name="com.gy.testcase.AnyFollowTriggerSearchFollowInteractive"/>
+    	    <class name="com.gy.testcase.AnyFollowTriggerQRcodeFollow"/> 
+    	  	<class name="com.gy.testcase.DirectFollowTriggerIMP"/>
+    	    <class name="com.gy.testcase.DirectFollowTriggerInteractive"/>
+    	    <class name="com.gy.testcase.DirectFollowConditionTrigger"/>
+    	    <class name="com.gy.testcase.DirectFollowConditionTriggerInteractive"/>
+    	    <class name="com.gy.testcase.DirectFollowNotInConditionTrigger"/> 
+    	    <class name="com.gy.testcase.DirectFollowNotInCondtionInteractive"/>  
+    	     <class name="com.gy.testcase.LBSTriggerOnce"/>
+    	    <class name="com.gy.testcase.LBSTriggerOnceInteractive"/>
+    	    <class name="com.gy.testcase.UpdateLBSTriggerToNoOnce"/>
+    	    <class name="com.gy.testcase.LBSTriggerNoOnceInteractive"/>
+    	    <class name="com.gy.testcase.CloseLBSTrigger"/>   
+    	    
+    	     <class name="com.gy.testcase.Segmentation48"/>
+    	    <class name="com.gy.testcase.MessageTriggerPMI"/>
+    	    <class name="com.gy.testcase.MessageTriggerPMInteractive"/>
+    	    <class name="com.gy.testcase.SegmentationChina"/>
+    	    <class name="com.gy.testcase.UpdateTriggerPMISegmentation"/>
+    	    <class name="com.gy.testcase.ChinaPMITriggerInteractive"/>
+    	    <class name="com.gy.testcase.UpdatePMINoCondition"/>
+    	    <class name="com.gy.testcase.PMINoConditionTriggerInteravtive"/>
+    	    <class name="com.gy.testcase.CloseTriggerPMI"/>
+    	    
+    	   
+    	    
+    	     <class name="com.gy.testcase.ImageTriggerMIP"/>
+    	    <class name="com.gy.testcase.ImageTriggerMIPInteractive"/>
+    	    <class name="com.gy.testcase.ImageTriggerUpdate48"/>
+    	    <class name="com.gy.testcase.ImageTrigger48Interactive"/>
+    	    <class name="com.gy.testcase.ImageTriggerUpdateChina"/>
+    	    <class name="com.gy.testcase.ImageTriggerChinaInteractive"/>
+    	    <class name="com.gy.testcase.CloseImageTriggerInteractive"/>
+    	    
+	       	
+	    </classes>
+	</test>  
+	
+	                                          <!--     测试default message和welcome message -->                         
+	 <test name="testDefaultWelcome">
+	    <classes>
+	        
+	         <class name="com.gy.testcase.MessageInbox"/>
+	        
+	      <!--  <class name="com.gy.testcase.DefaultMessageText">
+                <methods>
+                    <include name="text"/>
+                    <include name="defaultTextInteractive"/>
+                </methods>
+            </class>
+            <class name="com.gy.testcase.DefaultMessagePost">
+             	<methods>
+                    <include name="post"/>
+                    <include name="defaultMessagePostInteractive"/>	
+                </methods>
+            </class>    
+            <class name="com.gy.testcase.DefaultMessageImage">
+             	<methods>
+                    <include name="image"/>
+                    <include name="defaultImageInteractive"/>
+                    <include name="defaultImageOffInteractive"/>
+                </methods>
+            </class>    
+            <class name="com.gy.testcase.DefaultVoice">
+                <methods>
+                    <include name="voice"/>
+                    <include name="defaultVoiceInteractive"/>
+                </methods>
+            </class>  
+            <class name="com.gy.testcase.DefaultVideo">
+                <methods>
+                    <include name="video"/>
+                    <include name="defaultVideoInteractive"/>
+                </methods>
+            </class>  
+            <class name="com.gy.testcase.DefaultMessageSpace">
+            	 <methods>
+                    <include name="defaultMessageSpace"/>
+                    <include name="defaultSpaceInteractive"/>
+                </methods>
+            </class>   -->
+            
+            
+            <class name="com.gy.testcase.WelcomMessage"/>
+            <class name="com.gy.testcase.WelcomeMessageInteractive"/>
+            <class name="com.gy.testcase.WelcomeImage"/>
+            <class name="com.gy.testcase.WelcomeImageInteractive"/>
+            <class name="com.gy.testcase.WelcomeVideo"/>
+            <class name="com.gy.testcase.WelcomeVideoInteractive"/>
+            <class name="com.gy.testcase.WelcomeVoice"/>
+            <class name="com.gy.testcase.WelcomeVoiceInteractive"/>
+            <class name="com.gy.testcase.WelcomeMessageDefaultInteractive"/>
+            <class name="com.gy.testcase.WelcomePost"/>
+            <class name="com.gy.testcase.WelcomePostInteractive"/>
+            
+          	<class name="com.gy.testcase.NewEditorMultiPost"/> 
+        	
+	    </classes>
+	</test> 
+	
+	                                                          <!--        测试新版编辑器创建 new editor post and keyword   -->                              
+	  <test name="TestNewEditorKeyword">
+	    <classes>
+	       	
+	   	<class name="com.gy.testcase.ImportPost"/>
+	       	<class name="com.gy.testcase.SendPreviewText"/>
+	       	
+        	<class name="com.gy.testcase.SendPreviewImage"/>  
+        		
+        	<class name="com.gy.testcase.NewEditorSinglePost"/>			
+        	<class name="com.gy.testcase.NewEditorSingleReplyPost"/>
+        	<class name="com.gy.testcase.NewEditorMultiReplyPost"/>
+        	<class name="com.gy.testcase.Schedule48SegmentationReplyPost"/>
+        	
+        <class name="com.gy.testcase.CloseOldKeyword"/> 
+            
+             <class name="com.gy.testcase.KeywordText"/>
+        	 <class name="com.gy.testcase.KeywordTextInteractive"/>
+        	 <class name="com.gy.testcase.KeywordPost"/>
+      		 <class name="com.gy.testcase.KeywordPostInteractive"/>
+      		 <class name="com.gy.testcase.KeywordVideo"/>
+        	 <class name="com.gy.testcase.KeywordVideoInteractive"/>
+        	 <class name="com.gy.testcase.KeywordVoice"/>
+     		 <class name="com.gy.testcase.KeywordVoiceInteractive"/>
+     		 <class name="com.gy.testcase.KeywordImage"/>
+        	 <class name="com.gy.testcase.KeywordImageInteractive"/>
+        	 <class name="com.gy.testcase.KeywordImageCloseInteractive"/>
+	    </classes>
+	</test>  
+	 
+</suite>

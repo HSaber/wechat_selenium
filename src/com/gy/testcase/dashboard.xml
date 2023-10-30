@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteDashboard" verbose="2" parallel="tests" thread-count="1">
+    
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <test name="TestDashboard">
+        <classes>
+        	<class name="com.gy.testcase.FollowerDataMonitor"/>
+        	
+        	<class name="com.gy.testcase.DashboardNewFollowers"/>
+        	<class name="com.gy.testcase.DashboardUnfollows"/>
+        	<class name="com.gy.testcase.DashboardTotalFollows"/>
+        	<class name="com.gy.testcase.DashboardShares"/>
+        	<class name="com.gy.testcase.DashboardAvgAction"/>
+        	
+        	<class name="com.gy.testcase.DashboardActionSource"/>
+        	<class name="com.gy.testcase.DashboardActionSourceBehavior"/>
+        	<class name="com.gy.testcase.DashboardActionSourceEcommerce"/>
+        	<class name="com.gy.testcase.DashboardActionSourceSiteTracking"/>
+        	
+        	<class name="com.gy.testcase.DashboardBehavior"/>
+        	<class name="com.gy.testcase.DashboardBehaviorLBS"/>
+        	<class name="com.gy.testcase.DashboardBehaviorMenu"/>
+        	<class name="com.gy.testcase.DashboardBehaviorMessage"/>
+        	<class name="com.gy.testcase.DashboardBehaviorPost"/>
+        	<class name="com.gy.testcase.DashboardBehaviorQRCode"/>
+        	<class name="com.gy.testcase.DashboardBehaviorSubscribe"/>
+        				
+        	<class name="com.gy.testcase.DashboardTopKeywords"/>	
+        	<class name="com.gy.testcase.DashboardTopMenus"/>		
+        	
+        </classes>
+    </test>
+</suite>

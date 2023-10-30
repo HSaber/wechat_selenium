@@ -1,0 +1,2 @@
+[ERROR] 2017-05-26 10:12:07,459 method:com.hu.testcase.SegmentationVerificationABTesting.test(SegmentationVerificationABTesting.java:106)
+ABTesting segmentation 查询人数不一致，mysql result:null  Segmentation result:45

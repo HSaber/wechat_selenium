@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteWelcomeMessage" verbose="2">     <!-- 97s -->
+	<listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+	<test name="TestWelcomeMessage">
+		<classes>
+			<class name="com.gy.testcase.WelcomMessage" />
+			<class name="com.gy.testcase.WelcomeMessageInteractive" />
+			<class name="com.gy.testcase.WelcomeImage" />
+			<class name="com.gy.testcase.WelcomeImageInteractive" />
+			<class name="com.gy.testcase.WelcomeVideo" />
+			<class name="com.gy.testcase.WelcomeVideoInteractive" />
+			<class name="com.gy.testcase.WelcomeVoice" />
+			<class name="com.gy.testcase.WelcomeVoiceInteractive" />
+			<class name="com.gy.testcase.WelcomeMessageDefaultInteractive" />
+			<class name="com.gy.testcase.WelcomePost" />
+			<class name="com.gy.testcase.WelcomePostInteractive" />
+		</classes>
+	</test>
+</suite>

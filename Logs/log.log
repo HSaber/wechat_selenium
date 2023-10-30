@@ -1,0 +1,6 @@
+[INFO ] 2017-05-27 15:15:26,819 method:com.hu.testcase.FormEventPartiTest.test(FormEventPartiTest.java:46)
+Http://dev.jingsocial.com/formEvent/index?openid=&wid=@33&event_id=142&open_id=oOuXGtxg1eOzjkfhwpoPP1JA-YGs
+[INFO ] 2017-05-27 15:25:58,567 method:com.hu.testcase.FormEventPartiTest.test(FormEventPartiTest.java:46)
+Http://dev.jingsocial.com/formEvent/index?openid=&wid=@33&event_id=143&open_id=oOuXGtxg1eOzjkfhwpoPP1JA-YGs
+[INFO ] 2017-05-27 15:31:24,933 method:com.hu.testcase.FormEventPartiTest.test(FormEventPartiTest.java:46)
+Http://dev.jingsocial.com/formEvent/index?openid=&wid=@33&event_id=144&open_id=oOuXGtxg1eOzjkfhwpoPP1JA-YGs

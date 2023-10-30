@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteTrigger" verbose="2" parallel="tests" thread-count="3">
+    
+     <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <!-- <class name="com.gy.testcase.CloseOldTrigger"/> 149s -->
+	 <test name="TestFollowtrigger">
+    	<classes>
+    	   	<class name="com.gy.testcase.SegmentationTag"/>  
+    	  	<class name="com.gy.testcase.AnyFollowTrigger"/>
+    	    <class name="com.gy.testcase.AnyFollowTriggerSearchFollowInteractive"/>
+    	    <class name="com.gy.testcase.AnyFollowTriggerQRcodeFollow"/> 
+    	  	<class name="com.gy.testcase.DirectFollowTriggerIMP"/>
+    	    <class name="com.gy.testcase.DirectFollowTriggerInteractive"/> 
+    	    <class name="com.gy.testcase.DirectFollowConditionTrigger"/>
+    	    <class name="com.gy.testcase.DirectFollowConditionTriggerInteractive"/>
+    	    <class name="com.gy.testcase.DirectFollowNotInConditionTrigger"/> 
+    	    <class name="com.gy.testcase.DirectFollowNotInCondtionInteractive"/>  
+    	    <class name="com.gy.testcase.LBSTriggerOnce"/>
+    	 	<!-- <class name="com.gy.testcase.LBSTriggerOnceInteractive"/>
+    	    <class name="com.gy.testcase.UpdateLBSTriggerToNoOnce"/>
+    	    <class name="com.gy.testcase.LBSTriggerNoOnceInteractive"/>
+    	    <class name="com.gy.testcase.CloseLBSTrigger"/>  -->
+    	    
+    	</classes>
+	</test>     
+	
+   <test name="TestSentMessagetrigger">
+    	<classes>
+    	    <class name="com.gy.testcase.Segmentation48"/>
+    	    <class name="com.gy.testcase.MessageTriggerPMI"/>
+    	    <class name="com.gy.testcase.MessageTriggerPMInteractive"/>
+    	 	 <class name="com.gy.testcase.SegmentationChina"/> 
+    	    <class name="com.gy.testcase.UpdateTriggerPMISegmentation"/>
+    	    <class name="com.gy.testcase.ChinaPMITriggerInteractive"/>
+    	    <class name="com.gy.testcase.UpdatePMINoCondition"/>
+    	    <class name="com.gy.testcase.PMINoConditionTriggerInteravtive"/>
+    	    <class name="com.gy.testcase.CloseTriggerPMI"/>
+    	</classes>
+	</test>    
+	
+ 	<test name="TestSentImagetrigger">
+    	<classes>
+    	    <class name="com.gy.testcase.ImageTriggerMIP"/>
+    	    <class name="com.gy.testcase.ImageTriggerMIPInteractive"/>
+    	    <class name="com.gy.testcase.ImageTriggerUpdate48"/>
+    	     <class name="com.gy.testcase.ImageTrigger48Interactive"/>
+    	    <class name="com.gy.testcase.ImageTriggerUpdateChina"/>
+    	    <class name="com.gy.testcase.ImageTriggerChinaInteractive"/>
+    	    <class name="com.gy.testcase.CloseImageTriggerInteractive"/>
+    	    <class name="com.gy.testcase.CloseOldKeyword"/>
+    	</classes>
+	</test>        
+</suite>

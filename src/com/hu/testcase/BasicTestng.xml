@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BasicSuite" parallel="tests" thread-count="4">  
+
+ <test name="Poll">
+    <classes>  
+         <class name="com.hu.testcase.PollCreateTest"/>
+          <class name="com.hu.testcase.PollUpdateTest"/>
+          <class name="com.hu.testcase.FollowerOldTagBeforeTrigger"/>
+      <class name="com.hu.testcase.FollowerProfileCleanTags"/> 
+         <class name="com.hu.testcase.TriggerClose"/>    
+<!--            <class name="com.hu.testcase.CustomFieldFormEventCategory"/>
+           <class name="com.hu.testcase.CustomFieldFormEventCreateTest"/>          
+           <class name="com.hu.testcase.FormEventCreateTest"/> 
+          <class name="com.hu.testcase.FormEventPartiTest"/>
+           <class name="com.hu.testcase.FormEventDataTest"/>   -->            
+<!--     <class name="com.hu.testcase.PollParti"/> 
+          <class name="com.hu.testcase.PollAnalyticsTest"/> 待定 -->
+    </classes> 
+  </test> 
+  
+    <test name="QrCodeText">
+    <classes> 
+            <class name="com.hu.testcase.QrCodeTextTest"/>
+             <class name="com.hu.testcase.QrcodeImage"/>
+              <class name="com.hu.testcase.SegmentFollowDateToday"/>
+            <class name="com.hu.testcase.FollowerProfileMessageTest"/>                                 
+          <!--  <class name="com.hu.testcase.Html5CreateTest"/>
+           <class name="com.hu.testcase.Html5ActionTest"/>           
+           <class name="com.hu.testcase.Html5UpdateTest"/>
+           <class name="com.hu.testcase.CustomDataReportTest"/>
+           <class name="com.hu.testcase.CustomDataCallBack"/>    -->        
+    </classes>
+  </test>
+         
+  <test name="Tag">
+    <classes> 
+          <class name="com.hu.testcase.TagCategoryCreate"/>
+           <class name="com.hu.testcase.TagCreateTest"/>
+           <class name="com.hu.testcase.FollowerProfileTagTest"/>
+           <class name="com.interactive.testcase.HCSpecialMessage"/>
+          <class name="com.hu.testcase.MenuPerCleanOldVersion"/> 
+          <class name="com.hu.testcase.MenuPersonalGY"/>
+          <class name="com.hu.testcase.MenuPersonalHC"/>
+            <class name="com.hu.testcase.TagUpdateTest"/>
+    </classes>
+   </test>
+    
+   <test name="Menu">
+    <classes>                              
+           <class name="com.hu.testcase.CustomFieldCategory"/>
+           <class name="com.hu.testcase.CustomFieldCreateTest"/>
+           
+           <class name="com.hu.testcase.FormEventCreateTest"/>                    
+  
+           <class name="com.hu.testcase.SurveyCreateTest"/>
+           <class name="com.hu.testcase.SurveyUpdateTest"/>
+                    
+           <class name="com.hu.testcase.Html5CreateTest"/>
+                            
+           <class name="com.hu.testcase.MenuSettingTest"/>
+           <class name="com.interactive.testcase.MenuClickAPITest"/>
+           <class name="com.hu.testcase.SurveyJoinedDataTest"/>
+                     
+           <class name="com.hu.testcase.MenuPersonalCopyDefault"/>
+           <class name="com.hu.testcase.MenuEditDefaultCopyMenu"/>
+           <class name="com.hu.testcase.MenuPersonalPublish"/>  
+
+           <class name="com.hu.testcase.FollowerAnotherTagCheck"/>
+           <class name="com.hu.testcase.FollowerProfileCustomTest"/>     
+           <class name="com.hu.testcase.CustomFieldCheck"/>     
+           
+           <class name="com.interactive.testcase.MenuPersonalInfoQuery"/>
+           <class name="com.interactive.testcase.MenuPersonalClickAPI"/>
+           
+           <class name="com.hu.testcase.FollowerPersonalMenuTagCheck"/> 
+           
+           <class name="com.hu.testcase.TagClassification"/> 
+    </classes>
+  </test>
+      
+<!--   <test name="QrcodeCoupon">
+    <classes> 
+           <class name="com.hu.testcase.CouponCashCreateTest"/>
+           <class name="com.hu.testcase.CouponCashUpdateTest"/>
+           <class name="com.hu.testcase.CouponStatusTest"/>
+           <class name="com.hu.testcase.QrCodeCouponTest"/>
+           <class name="com.hu.testcase.CouponAnalyticsCheck"/>
+    </classes>
+    </test>    -->            
+              
+</suite>

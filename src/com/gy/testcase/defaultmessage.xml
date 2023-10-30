@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suitedefaultmessage" parallel="tests" thread-count="2" verbose="2">
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <test name="testdefaultmessage">	
+        <classes>
+            <class name="com.gy.testcase.DefaultMessageText">
+                <methods>
+                    <include name="text"/>
+                    <include name="defaultTextInteractive"/>
+                </methods>
+            </class>
+            <class name="com.gy.testcase.DefaultMessagePost">
+             	<methods>
+                    <include name="post"/>
+                    <include name="defaultMessagePostInteractive"/>	
+                </methods>
+            </class>    
+            <class name="com.gy.testcase.DefaultMessageImage">
+             	<methods>
+                    <include name="image"/>
+                    <include name="defaultImageInteractive"/>
+                    <include name="defaultImageOffInteractive"/>
+                </methods>
+            </class>    
+            <class name="com.gy.testcase.DefaultVoice">
+                <methods>
+                    <include name="voice"/>
+                    <include name="defaultVoiceInteractive"/>
+                </methods>
+            </class>  
+            <class name="com.gy.testcase.DefaultVideo">
+                <methods>
+                    <include name="video"/>
+                    <include name="defaultVideoInteractive"/>
+                </methods>
+            </class>  
+            <class name="com.gy.testcase.DefaultMessageSpace">
+            	 <methods>
+                    <include name="defaultMessageSpace"/>
+                    <include name="defaultSpaceInteractive"/>
+                </methods>
+            </class>  
+        </classes> 
+    </test> <!-- default message -->
+    
+  	<test name="testmessageinbox">
+        <classes>
+            <class name="com.gy.testcase.MessageInbox"/>	
+        </classes>
+    </test>  
+</suite> 

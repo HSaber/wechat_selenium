@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="guoyan" name="wechat">
+	
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+	<property name="testoutput.dir" value="test-output"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+	<property name="LIB" value="${basedir}/libs" />
+	<property name="LIBE" value="${basedir}/libelastic" />
+	<property name="LIBS" value="${basedir}/libsearchguard" />
+	<property name="BIN" value="${basedir}/bin" />
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+	
+    <path id="wechat.classpath">
+     <pathelement location="${BIN}" />
+    	    <fileset dir="${LIB}">
+    	         <include name="**/*.jar" />
+    	    </fileset>
+    	
+    	 	<fileset dir="${LIBE}">
+    	    	 <include name="**/*.jar" />
+    	    </fileset>
+    	
+    		<fileset dir="${LIBS}">
+    	    	 <include name="**/*.jar" />
+    	   	</fileset>
+    	
+    	    <fileset dir="${basedir}">
+    	         <include name="*.jar" />
+    	    </fileset>
+    </path>
+	
+	
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+	
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+	
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac encoding="UTF-8" debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="wechat.classpath"/>
+        </javac>
+    </target>
+	
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+	
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+	
+	<!-- 新增-->
+ 	<target name="compile" depends="build-project">
+ 		<mkdir dir="bin"/>
+ 		<javac srcdir="src" destdir="bin" debug="on" classpathref="wechat.classpath" includeAntRuntime="false" encoding="UTF-8"/>
+ 	   </target>
+ 			
+	<taskdef resource="testngtasks" classpathref="wechat.classpath"/>
+
+	 <target name="neweditor" depends="compile">
+	 	<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+	 		<xmlfileset dir="${basedir}/src/com/gy/testcase/" includes="neweditor.xml"/>
+	 	   	<jvmarg value="-Dfile.encoding=UTF-8"/> 
+	 	</testng>
+	 </target> 
+	
+	<target name="trigger">
+		<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+		 	<xmlfileset dir="${basedir}/src/com/gy/testcase/" includes="trigger.xml"/>
+		 	<jvmarg value="-Dfile.encoding=UTF-8"/> 
+		 </testng>
+	</target>
+	<target name="keyword">
+		<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+			<xmlfileset dir="${basedir}/src/com/gy/testcase/" includes="keyword.xml"/>
+			<jvmarg value="-Dfile.encoding=UTF-8"/> 
+		</testng>
+	</target>
+	<target name="welcomemessage">
+		<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+			<xmlfileset dir="${basedir}/src/com/gy/testcase/" includes="welcomemessage.xml"/>
+			<jvmarg value="-Dfile.encoding=UTF-8"/> 
+		</testng>
+	</target>
+	<target name="defaultmessage">
+		<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+			<xmlfileset dir="${basedir}/src/com/gy/testcase/" includes="defaultmessage.xml"/>
+			<jvmarg value="-Dfile.encoding=UTF-8"/> 
+		</testng>
+	</target>
+  <target name="guoyan" depends="neweditor,trigger,keyword,welcomemessage,defaultmessage">
+		<xslt in="${testoutput.dir}/testng-results.xml" style="${testoutput.dir}/testng-results.xsl" out="${testoutput.dir}/testreport.html ">
+			<param name="testNgXslt.outputDir" expression="${basedir}/test-output/" />
+			<classpath refid="wechat.classpath" />
+		</xslt>
+	</target>  
+		
+  <target name="AnySpecialMenu">
+ 	<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+ 		<xmlfileset dir="${basedir}/src/com/hu/testcase/" includes="AnySpecialMenuTestng.xml"/>
+ 	   <jvmarg value="-Dfile.encoding=UTF-8"/> 
+ 		</testng>
+ 		</target> 		
+	
+	<target name="SpecificQrcode">
+	 	<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+	 		<xmlfileset dir="${basedir}/src/com/hu/testcase/" includes="SpecificQrCodeTriggerTestng.xml"/>
+	 	   <jvmarg value="-Dfile.encoding=UTF-8"/> 
+	 		</testng>
+	 		</target> 
+		
+	<target name="AnyQrcode">
+	 	<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+	 		<xmlfileset dir="${basedir}/src/com/hu/testcase/" includes="AnyQrCodeTriggerTestng.xml"/>
+	 	   <jvmarg value="-Dfile.encoding=UTF-8"/> 
+	 		</testng>
+	 		</target> 
+	
+	<target name="AnyAction">
+	 	<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+	 		<xmlfileset dir="${basedir}/src/com/hu/testcase/" includes="AnyActionTriggerTestng.xml"/>
+	 	   <jvmarg value="-Dfile.encoding=UTF-8"/> 
+	 		</testng>
+	 		</target> 
+	 	   	
+	<target name="BasicTestNG"  depends="compile">
+	 	<testng outputdir="${testoutput.dir}" classpathref="wechat.classpath">
+	 		<xmlfileset dir="${basedir}/src/com/hu/testcase/" includes="BasicTestng.xml"/>
+	 	   <jvmarg value="-Dfile.encoding=UTF-8"/> 
+	 		</testng>
+	 		</target> 
+	<!--depends="BasicTestNG,AnyAction,AnyQrcode,SpecificQrcode,AnySpecialMenu"-->
+ 			
+	<target name="huhuan" depends="BasicTestNG,AnyAction,AnyQrcode,SpecificQrcode,AnySpecialMenu">
+	       
+	        <xslt in="${testoutput.dir}/testng-results.xml" style="${testoutput.dir}/testng-results.xsl"
+	              out="${testoutput.dir}/index1.html">
+	            <param name="testNgXslt.outputDir" expression="${testoutput.dir}"/>
+	        	<param name="testNgXslt.showRuntimeTotals" expression="true"/>
+	        	<param name="testNgXslt.sortTestCaseLinks" expression="true" />
+	        
+	        	<classpath refid="wechat.classpath"/>
+	        </xslt>
+	    </target> 
+		
+</project>

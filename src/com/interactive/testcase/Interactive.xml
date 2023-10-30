@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Interactive">
+
+<test name="Interactive">
+ <parameter name="openIdNum" value="0" />
+<parameter name="openIdMax" value="1" />
+<classes>
+         <class name="com.interactive.testcase.SendMessageInteractive"/>
+         <class name="com.interactive.testcase.MenuInfoAndSingleClick"/>
+         <class name="com.interactive.testcase.UnFollow"/>
+         <class name="com.interactive.testcase.FollowThroughScanQrcode"/>
+         <class name="com.interactive.testcase.QrCodeScan"/>
+         <class name="com.interactive.testcase.HCSpecialMessage"/>
+         <class name="com.interactive.testcase.HCSpecialMessage"/>
+</classes>
+</test>

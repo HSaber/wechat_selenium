@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TriggerSuite" parallel="tests" thread-count="3">
+	<listeners>
+		<listener class-name="com.hu.testcase.RetryListener" />
+		<listener class-name="com.hu.testcase.TestListener" />
+	</listeners>
+
+
+	<test name="SpecificQrCodeEx"> <!-- 1,2 -->
+		<parameter name="TriggerTitle" value="SpecQrExOnce" />
+		<parameter name="TriggerNum" value="10" />
+		<parameter name="openIdNum" value="2" />
+		<parameter name="openIdMax" value="2" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerSpecificQrCodeExistOnceDelay" />
+			<class name="com.interactive.testcase.QrCodeScan" />
+			<class name="com.interactive.testcase.QrCodeScan" />
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+
+	<test name="SpecificQrCodeExNe"><!-- 0,1 -->
+		<parameter name="TriggerTitle" value="SpecQrExNewCon" />
+		<parameter name="TriggerNum" value="11" />
+		<parameter name="openIdNum" value="0" />
+		<parameter name="openIdMax" value="1" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerSpecificQrCodeExNewConImmedia" />			
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.interactive.testcase.QrCodeScan" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+
+	<test name="SpecificQrCodeTriggerNew"><!--3 -->
+		<parameter name="TriggerTitle" value="SpecQrNew" />
+		<parameter name="TriggerNum" value="12" />
+		<parameter name="openIdNum" value="3" />
+		<parameter name="openIdMax" value="3" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerSpecificQrCodeNewDelay" />
+			<class name="com.interactive.testcase.QrCodeScan" />
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->

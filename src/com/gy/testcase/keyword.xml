@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteKeyword" verbose="2" parallel="tests" thread-count="5">
+   
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+   <!-- <test name="TestCloseKeyword">      449s
+        <classes>
+        	 <class name="com.gy.testcase.CloseOldKeyword"/>  
+        	
+        </classes>
+    </test> -->
+    
+    <test name="TestKeywordText">	<!-- 111s -->
+        <classes>
+        	<!--  <class name="com.gy.testcase.CloseOldKeyword"/>  -->
+        	  <class name="com.gy.testcase.KeywordText"/>
+        	  <class name="com.gy.testcase.KeywordTextInteractive"/>
+        	
+        </classes>
+    </test>
+    
+    <test name="TestKeywordPost">	<!-- 97s -->
+        <classes>
+           	<class name="com.gy.testcase.KeywordPost"/>
+      		<class name="com.gy.testcase.KeywordPostInteractive"/>
+        </classes>
+    </test> 
+    
+  <test name="TestKeywordImage">	
+        <classes>	
+        	<class name="com.gy.testcase.KeywordImage"/>
+        	<class name="com.gy.testcase.KeywordImageInteractive"/>
+        	<class name="com.gy.testcase.KeywordImageCloseInteractive"/>
+        </classes>
+    </test>
+    
+    <test name="TestKeywordVideo">
+        <classes>	
+        	<class name="com.gy.testcase.KeywordVideo"/>
+        	<class name="com.gy.testcase.KeywordVideoInteractive"/>
+        </classes>
+    </test>
+    
+    <test name="TestKeywordVoice">	
+        <classes>	
+        	<class name="com.gy.testcase.KeywordVoice"/>
+     		<class name="com.gy.testcase.KeywordVoiceInteractive"/>
+        </classes>
+    </test>  
+        	
+</suite>

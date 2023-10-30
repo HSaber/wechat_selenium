@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TriggerSuite" parallel="tests" thread-count="3" >
+<listeners>
+     <listener class-name="com.hu.testcase.RetryListener" />
+     <listener class-name="com.hu.testcase.TestListener" />
+ </listeners>
+<test name="AnyActionTrigger">
+ <parameter name="TriggerTitle" value="AnyActCon" />
+ <parameter name="TriggerNum" value="0" />
+ <parameter name="openIdNum" value="1" />
+ <parameter name="openIdMax" value="1" />
+<classes>
+        <class name="com.hu.testcase.TriggerOriginalRecord"/>
+        <class name="com.hu.testcase.TriggerAnyActionMultiConditionalDelay"/>
+	    <class name="com.interactive.testcase.SendMessageInteractive" />
+	    <class name="com.interactive.testcase.Timer" />
+	    <class name="com.interactive.testcase.MenuInfoAndSingleClick" />
+	    <class name="com.interactive.testcase.Timer" />
+	    <class name="com.interactive.testcase.FollowThroughScanQrcode" />
+	    <class name="com.interactive.testcase.Timer" />
+	    <class name="com.interactive.testcase.Timer" />
+	    <class name="com.interactive.testcase.Timer" />
+	    <class name="com.interactive.testcase.QrCodeScan" />
+        <class name="com.hu.testcase.TriggerActionRecord"/> 
+</classes>
+</test>
+
+ <test name="AnyActionTriggerOnce">
+  <parameter name="TriggerTitle" value="AnyActOnce" />
+   <parameter name="TriggerNum" value="1" />
+  <parameter name="openIdNum" value="2" />
+  <parameter name="openIdMax" value="3" />
+<classes>       
+         <class name="com.hu.testcase.TriggerOriginalRecord"/>
+         <class name="com.hu.testcase.TriggerAnyActionMultiOnceImmediately"/>
+         <class name="com.interactive.testcase.SendMessageInteractive"/>
+         <class name="com.interactive.testcase.SendMessageInteractive"/>
+         <class name="com.interactive.testcase.MenuInfoAndSingleClick"/>
+         <class name="com.interactive.testcase.MenuInfoAndSingleClick"/>
+          <class name="com.interactive.testcase.QrCodeScan"/>
+         <class name="com.interactive.testcase.QrCodeScan"/>
+         <class name="com.interactive.testcase.FollowThroughScanQrcode"/>
+         <class name="com.interactive.testcase.FollowThroughScanQrcode"/> 
+         <class name="com.hu.testcase.TriggerActionRecord"/>
+</classes>
+</test>
+
+<test name="AnyActionConOnce">
+  <parameter name="TriggerTitle" value="AnyAct-ConOnce" />
+   <parameter name="TriggerNum" value="2" />
+  <parameter name="openIdNum" value="0" />
+  <parameter name="openIdMax" value="0" />
+<classes>       
+         <class name="com.hu.testcase.TriggerOriginalRecord"/>
+         <class name="com.hu.testcase.TriggerAnyActionCondOnce"/>
+         <class name="com.interactive.testcase.SendMessageInteractive"/>
+         <class name="com.interactive.testcase.SendMessageInteractive"/>
+         <class name="com.interactive.testcase.MenuInfoAndSingleClick"/>
+         <class name="com.interactive.testcase.MenuInfoAndSingleClick"/>
+          <class name="com.interactive.testcase.QrCodeScan"/>
+         <class name="com.interactive.testcase.QrCodeScan"/>
+         <class name="com.interactive.testcase.FollowThroughScanQrcode"/>
+         <class name="com.interactive.testcase.FollowThroughScanQrcode"/> 
+         <class name="com.hu.testcase.TriggerActionRecord"/>
+</classes>
+</test> 
+
+</suite>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteMasterPost" verbose="2" parallel="classes" thread-count="4">
+    
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <test name="TestMasterPost">
+        <classes>
+        	<class name="com.gy.testcase.MasterSinglePost"/>			
+        	<class name="com.gy.testcase.MasterSingleReplyPost"/>	
+        	<class name="com.gy.testcase.MasterMultiReplyPost"/>		
+        	<class name="com.gy.testcase.MasterMultiPost"/>    		
+        </classes>
+    </test>
+</suite>

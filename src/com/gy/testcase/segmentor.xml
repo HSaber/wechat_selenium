@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteSegmentor" verbose="2" parallel="tests" thread-count="1">
+    
+    <listeners>
+		<!-- <listener class-name="com.gy.testcase.TestngListener" /> -->
+		 <listener class-name="com.gy.testcase.RetryListener" />
+		 <listener class-name="com.gy.testcase.TestListner" /> 
+	</listeners> 
+	
+    <test name="TestSegmentor">
+        <classes>
+        	<class name="com.gy.testcase.SegmentorAllFollowers"/>			
+        	<class name="com.gy.testcase.SegmentorAllFollowerSource"/>	
+        	<class name="com.gy.testcase.SegmentorAllFollowerStatus"/>		
+        	
+        </classes>
+    </test>
+</suite>

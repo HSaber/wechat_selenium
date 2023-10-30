@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TriggerSuite">
+
+ <test name="AnyQrCodeTriggerExNew">  
+<classes> 
+		 <!--  <class name="com.hu.testcase.CustomFieldFormEventCategory"/>
+           <class name="com.hu.testcase.CustomFieldFormEventCreateTest"/>          
+           <class name="com.hu.testcase.FormEventCreateTest"/>
+           <class name="com.hu.testcase.FormEventUpdateTest"/> 
+          <class name="com.hu.testcase.FormEventPartiTest"/>
+           <class name="com.hu.testcase.FormEventDataTest"/> -->
+           <class name="com.hu.testcase.TagCategoryCreate"/>
+           </classes>
+	</test>
+	
+
+</suite>

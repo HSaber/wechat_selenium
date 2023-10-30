@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TriggerSuite" parallel="tests" thread-count="3">
+	<listeners>
+		<listener class-name="com.hu.testcase.RetryListener" />
+		<listener class-name="com.hu.testcase.TestListener" />
+	</listeners>
+
+	<test name="AnyQrCodeTriggerExCon"> <!-- 1 慢 -->
+		<parameter name="TriggerTitle" value="AnyQrExCon" />
+		<parameter name="TriggerNum" value="5" />
+		<parameter name="openIdNum" value="1" />
+		<parameter name="openIdMax" value="1" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerAnyQrCodeExistConditionalDelay" />			
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.interactive.testcase.QrCodeScan" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+	<test name="AnyQrCodeTriggerExNew">   <!-- 2,3 -->
+		<parameter name="TriggerTitle" value="AnyQrExNew" />
+		<parameter name="TriggerNum" value="6" />
+		<parameter name="openIdNum" value="2" />
+		<parameter name="openIdMax" value="3" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerAnyQrCodeExNewImmediately" />
+			<class name="com.interactive.testcase.QrCodeScan" />
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+	<test name="AnyQrCodeTriggerNewCon"> <!-- 0 AB+Message 反应慢 -->
+		<parameter name="TriggerTitle" value="AnyQrNewCon" />
+		<parameter name="TriggerNum" value="7" />
+		<parameter name="openIdNum" value="0" />
+		<parameter name="openIdMax" value="0" />
+		<classes>
+			<class name="com.hu.testcase.TriggerOriginalRecord" />
+			<class name="com.hu.testcase.TriggerAnyQrCodeNewConditionalDelay" />
+			<class name="com.interactive.testcase.FollowThroughScanQrcode" />
+			<class name="com.hu.testcase.TriggerActionRecord" />
+		</classes>
+	</test>
+
+
+</suite>
